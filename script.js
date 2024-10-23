@@ -1,8 +1,15 @@
-function stringChop(str, size) {
-  // your code here
-}
+function chunkString(str, chunkLength) {
+    // If the input string is null, return an empty array
+    if (!str) return [];
 
-// Do not change the code below
-const str = prompt("Enter String.");
-const size = prompt("Enter Chunk Size.");
-alert(stringChop(str, size));
+    // Initialize an empty array to store the chunks
+    const chunks = [];
+
+    // Loop through the string, creating chunks of the given length
+    for (let i = 0; i < str.length; i += chunkLength) {
+        chunks.push(str.substring(i, i + chunkLength));
+    }
+
+    // Return the array of chunks
+    return chunks;
+}
